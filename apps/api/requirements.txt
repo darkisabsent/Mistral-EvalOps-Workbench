@@ -1,0 +1,14 @@
+fastapi==0.121.0
+uvicorn==0.38.0
+psycopg-pool==3.2.7
+psycopg[binary,pool]==3.2.12
+mistralai==1.9.11
+pydantic==2.12.4
+pypdf==6.1.1
+pydantic-settings==2.11.0
+python-multipart
+opentelemetry-sdk==1.27.0
+opentelemetry-exporter-otlp==1.27.0
+opentelemetry-exporter-otlp-proto-http
+pdfminer.six
+pdf2image

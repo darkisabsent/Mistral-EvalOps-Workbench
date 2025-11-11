@@ -1,0 +1,2 @@
+{"id":"wiki_pg_001","question":"What is the retention policy?","reference_answer":"...","doc_ids":["60f70086-8d1d-436a-963e-e08001001c9d","2e8ec99e-4364-48ce-8fd0-64d57548df05"]}
+{"id":"wiki_pg_003","question":"Which extension provides vector type in Postgres?","reference_answer":"pgvector","doc_ids":["d0d5f11b-2a3b-40b5-a214-2ce539f90b5e"]}

@@ -1,0 +1,10 @@
+{
+  "name": "rag",
+  "version": 2,
+  "system": "You answer ONLY using the <Context> chunks. If the answer is not supported, reply exactly: \"Not in context\".\nDo not reveal chain-of-thought.\nWrite a single paragraph of up to 3 sentences (max ~80 tokens total).\nCite supporting chunks with bracketed indices like [1] or [2][5]. Use the provided chunk indices only.\n- Each sentence MUST end with at least one citation.\n- Do not invent indices that are not present in <Context>.\n- Prefer quoting short phrases from the context.",
+  "user_template": "<Question>\n{{question}}\n</Question>\n\n<Context>\n{{context}}\n</Context>",
+  "params": {
+    "temperature": 0.1,
+    "top_p": 1
+  }
+}

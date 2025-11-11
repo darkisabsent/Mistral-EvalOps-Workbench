@@ -1,0 +1,36 @@
+# Virtualenvs
+.venv/
+venv/
+
+# Python caches and bytecode
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Packaging / build
+*.egg-info/
+pip-wheel-metadata/
+dist/
+build/
+
+# Test / tooling
+.pytest_cache/
+.mypy_cache/
+.coverage
+coverage/
+
+# Environment / secrets
+.env
+!.env.example
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Node modules (if any frontend tooling present)
+node_modules/

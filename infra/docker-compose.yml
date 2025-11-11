@@ -1,0 +1,40 @@
+services:
+  db:
+    # use a Postgres image that has the pgvector extension preinstalled
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2momo5popo
+      POSTGRES_DB: mistral
+    ports: ["5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB -h localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  api:
+    build: ../apps/api
+    env_file: ../.env
+    depends_on:
+      db: { condition: service_healthy }
+    ports: ["8001:8001"]
+    environment:
+      DOCS_DIR: /app/datasets/docs        
+      UPLOAD_DIR: /app/uploads             
+    volumes:
+      - ../datasets:/app/datasets          
+      - ../uploads:/app/uploads            
+
+  web:
+    build: ../apps/web
+    env_file: ../.env
+    depends_on: [api]
+    ports: ["3000:3000"]
+
+volumes:
+  pgdata: {}

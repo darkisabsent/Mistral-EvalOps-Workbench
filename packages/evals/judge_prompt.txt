@@ -1,0 +1,2 @@
+Evaluate the answer strictly using ONLY the provided context.
+Return JSON with fields: relevance (1-5), groundedness (1-5), rationale (cite which context snippet numbers mattered; do not repeat full text).
